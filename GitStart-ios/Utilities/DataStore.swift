@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
+
+class DataStore {
+    
+    static let shared = DataStore()
+    
+    var repos = BehaviorRelay(value: [Repo]())
+    var searchedRepos = BehaviorRelay(value: [Repo]())
+    
+}

@@ -7,3 +7,32 @@
 //
 
 import Foundation
+import ObjectMapper
+
+class Repo: BaseResponse {
+    
+    var name: String?
+    var fullName: String?
+    var description: String?
+    var forks: Int?
+    var watchers: Int?
+    
+    required init?(map: Map){
+        super.init(map: map)
+    }
+    
+    override init?(){
+        super.init()
+    }
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        name <- map["name"]
+        fullName <- map["full_name"]
+        description <- map["description"]
+        forks <- map["forks"]
+        watchers <- map["watchers"]
+    }
+    
+}
+

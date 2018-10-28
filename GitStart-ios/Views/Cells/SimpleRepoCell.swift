@@ -11,7 +11,9 @@ import UIKit
 class SimpleRepoCell: UITableViewCell {
 
     @IBOutlet weak private var containerView: UIView!
-
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ownerLabel: UILabel!
+    
     //You do not change these methods
 
     required init?(coder aDecoder: NSCoder) {

@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+protocol DataProviderProtocol {
+    
+    func getRepositories() -> Observable<[Repo]>
+    
+}

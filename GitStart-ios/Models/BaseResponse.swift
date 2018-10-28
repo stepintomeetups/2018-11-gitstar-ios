@@ -7,3 +7,21 @@
 //
 
 import Foundation
+import ObjectMapper
+
+class BaseResponse : Mappable {
+    
+    required init?(map: Map){
+        
+    }
+    
+    init?(){
+        
+    }
+    
+    func mapping(map: Map) {
+        
+    }
+}
+
+

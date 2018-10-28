@@ -9,10 +9,9 @@
 import UIKit
 
 class RepoDetailCell: UITableViewCell {
-
-    @IBOutlet weak private var containerView: UIView!
-
-    //You do not change these methods
+    
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var keyLabel: UILabel!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

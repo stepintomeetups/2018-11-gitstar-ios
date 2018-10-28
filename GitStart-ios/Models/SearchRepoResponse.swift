@@ -7,3 +7,21 @@
 //
 
 import Foundation
+import ObjectMapper
+
+class  SearchRepoResponse: BaseResponse {
+    var items: [Repo]?
+    
+    required init?(map: Map){
+        super.init(map: map)
+    }
+    
+    override init?(){
+        super.init()
+    }
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        items <- map["items"]
+    }
+}
