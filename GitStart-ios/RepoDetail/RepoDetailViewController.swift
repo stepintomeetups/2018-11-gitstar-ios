@@ -27,7 +27,7 @@ class RepoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Summary"
         MBProgressHUD.showAdded(to: AppDelegate.shared.window!, animated: true)
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableView.automaticDimension
@@ -84,20 +84,4 @@ extension RepoDetailViewController {
             cell.valueLabel.text = model.1
         }.disposed(by: disposeBag)
     }
-}
-
-extension Repo {
-    
-    func toKeyValuePair() -> [KeyValuePair] {
-        var pairs = [KeyValuePair]()
-        
-        pairs.append(("Name: ", self.name))
-        pairs.append(("Description: ", self.description))
-        pairs.append(("Forks: ", "\(self.forks ?? 0)"))
-        pairs.append(("Watchers: ", "\(self.watchers ?? 0)"))
-        
-        return pairs
-        
-    }
-    
 }

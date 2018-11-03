@@ -19,6 +19,7 @@ class RepoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "My repos"
         MBProgressHUD.showAdded(to: AppDelegate.shared.window!, animated: true)
         self.registerNibs()
         self.bindRows()

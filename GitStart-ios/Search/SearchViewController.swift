@@ -20,6 +20,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Search"
         self.tableView.rowHeight = 60
         self.bindRows()
         self.selectRow()

@@ -15,7 +15,8 @@ class Repo: BaseResponse {
     var fullName: String?
     var description: String?
     var forks: Int?
-    var watchers: Int?
+    var stars: Int?
+    var language: String?
     
     required init?(map: Map){
         super.init(map: map)
@@ -31,8 +32,27 @@ class Repo: BaseResponse {
         fullName <- map["full_name"]
         description <- map["description"]
         forks <- map["forks"]
-        watchers <- map["watchers"]
+        stars <- map["stargazers_count"]
+        language <- map["language"]
     }
     
 }
+
+extension Repo {
+    
+    func toKeyValuePair() -> [KeyValuePair] {
+        var pairs = [KeyValuePair]()
+        
+        pairs.append(("Name: ", self.name))
+        pairs.append(("Description: ", self.description))
+        pairs.append(("Forks: ", "\(self.forks ?? 0)"))
+        pairs.append(("Stars: ", "\(self.stars ?? 0)"))
+        pairs.append(("Language: ", "\(self.language ?? "")"))
+        
+        return pairs
+        
+    }
+    
+}
+
 
