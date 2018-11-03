@@ -37,14 +37,10 @@ class RepoListViewController: UIViewController {
         
     }
     
+    //TODO: Implement prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let repo = sender as? Repo else {
-            return
-        }
-        guard let repoDetailViewController = segue.destination as? RepoDetailViewController else {
-            return
-        }
-        repoDetailViewController.repo = repo
+
+        
     }
     
 }
@@ -59,10 +55,9 @@ extension RepoListViewController {
             }.disposed(by: disposeBag)
     }
     
+    //TODO: Implement select row
     func selectRow(){
-        self.tableView.rx.modelSelected(Repo.self).subscribe(onNext: { repo in
-            self.performSegue(withIdentifier: Constants.Segues.ShowRepoDetails, sender: repo)
-        }).disposed(by: disposeBag)
+        
     }
     
 }

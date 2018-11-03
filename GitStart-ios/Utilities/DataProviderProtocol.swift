@@ -13,5 +13,9 @@ import RxCocoa
 protocol DataProviderProtocol {
     
     func getRepositories() -> Observable<[Repo]>
+    func searchRepos(with name: String) -> Observable<[Repo]>
+    func isRepoStarred(fullName: String) -> Observable<Bool>
+    func starRepo(fullName: String) -> Observable<Bool>
+    func unStarRepo(fullName: String) -> Observable<Bool>
     
 }

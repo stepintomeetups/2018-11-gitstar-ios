@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
     
@@ -19,11 +20,15 @@ struct Constants {
     
     struct Cells {
         static let SimpleRepoCell = "SimpleRepoCell"
-        static let RepoDetailCell = "RepoDetailCell"
     }
     
     struct Segues {
         static let ShowRepoDetails = "ShowRepoDetails"
+    }
+    
+    struct Images {
+        static let Star = UIImage(named: "star")!
+        static let StarFilled = UIImage(named: "star_filled")!
     }
     
 }

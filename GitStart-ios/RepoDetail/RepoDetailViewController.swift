@@ -29,11 +29,19 @@ class RepoDetailViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Summary"
         MBProgressHUD.showAdded(to: AppDelegate.shared.window!, animated: true)
+        
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableView.automaticDimension
         self.registerNibs()
+        
         self.bindRows()
+        self.checkIsStarred()
+        
         self.details.accept(repo!.toKeyValuePair())
+        
+    }
+    
+    func checkIsStarred(){
         DataProvider.shared.isRepoStarred(fullName: repo!.fullName!).subscribe(onNext:{ starred in
             self.isRepoStarred.accept(starred)
             MBProgressHUD.hide(for: AppDelegate.shared.window!, animated: true)
@@ -44,17 +52,17 @@ class RepoDetailViewController: UIViewController {
     }
     
     func setStarButton(_ starred: Bool) {
-        var starImage = UIImage(named: "star")
+        var starImage = Constants.Images.Star
         if starred {
-            starImage = UIImage(named: "star_filled")
+            starImage = Constants.Images.StarFilled
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: starImage, style: .plain, target: self, action: #selector(starButtonPushed))
     }
     
+    //TODO: Need implement register nib
     func registerNibs() {
-        let repoDetailCellNib = UINib(nibName: Constants.Cells.RepoDetailCell, bundle: nil)
-        self.tableView.register(repoDetailCellNib, forCellReuseIdentifier: Constants.Cells.RepoDetailCell)
+        
     }
     
     @objc func starButtonPushed() {
@@ -78,10 +86,8 @@ class RepoDetailViewController: UIViewController {
 
 extension RepoDetailViewController {
     
+    //TODO: Need implement bind rows
     func bindRows(){
-        self.details.bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.RepoDetailCell)){ (_, model, cell: RepoDetailCell) in
-            cell.keyLabel.text = model.0
-            cell.valueLabel.text = model.1
-        }.disposed(by: disposeBag)
+        
     }
 }

@@ -21,7 +21,7 @@ class DataProvider: DataProviderProtocol {
     static var headers: [String: String] {
         get {
             return [
-                "Authorization": "token 00eef5f640a08474644a32cf2571f79c0adfeb1a",
+                "Authorization": Token.GitHub,
                 "Content-Length": "0"
             ]
         }

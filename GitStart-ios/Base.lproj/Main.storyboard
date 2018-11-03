@@ -67,7 +67,6 @@
                     <connections>
                         <outlet property="searchField" destination="6kF-Ig-TTO" id="yE6-o9-bmy"/>
                         <outlet property="tableView" destination="nPy-ud-KjG" id="2cB-vS-Eqs"/>
-                        <segue destination="G49-xW-49L" kind="show" identifier="ShowRepoDetails" id="Yzb-FY-5bc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZK-2c-uKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -99,42 +98,11 @@
                     <navigationItem key="navigationItem" id="xwD-CW-aY6"/>
                     <connections>
                         <outlet property="tableView" destination="MBM-ZG-89x" id="yyF-H8-UYA"/>
-                        <segue destination="G49-xW-49L" kind="show" identifier="ShowRepoDetails" id="2Qg-WS-bcp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtb-Zr-s5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028" y="-436.73163418290858"/>
-        </scene>
-        <!--Repo Detail View Controller-->
-        <scene sceneID="1yG-dy-yxw">
-            <objects>
-                <viewController storyboardIdentifier="RepoDetailViewController" id="G49-xW-49L" customClass="RepoDetailViewController" customModule="GitStart_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="n5b-G8-pq0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XZp-li-Qrv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="XZp-li-Qrv" firstAttribute="leading" secondItem="4HJ-Ud-oYI" secondAttribute="leading" id="Ag4-vJ-Uzo"/>
-                            <constraint firstItem="4HJ-Ud-oYI" firstAttribute="bottom" secondItem="XZp-li-Qrv" secondAttribute="bottom" id="Lce-az-a89"/>
-                            <constraint firstItem="XZp-li-Qrv" firstAttribute="top" secondItem="4HJ-Ud-oYI" secondAttribute="top" id="YaY-Dr-dsu"/>
-                            <constraint firstItem="4HJ-Ud-oYI" firstAttribute="trailing" secondItem="XZp-li-Qrv" secondAttribute="trailing" id="rwD-cB-GC2"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="4HJ-Ud-oYI"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="XZp-li-Qrv" id="T4d-vN-YuW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z99-I5-sEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1889" y="-105"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HRl-eR-tjE">
@@ -193,7 +161,4 @@
             <point key="canvasLocation" x="88.799999999999997" y="-436.73163418290858"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Yzb-FY-5bc"/>
-    </inferredMetricsTieBreakers>
 </document>
